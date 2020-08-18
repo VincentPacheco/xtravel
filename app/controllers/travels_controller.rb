@@ -10,7 +10,7 @@ class TravelsController < ApplicationController
   end
 
   def new
-    @travel = user.travels.new
+    @travel = current_user.travels.new
     authorize @travel
   end
 
