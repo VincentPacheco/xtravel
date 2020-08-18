@@ -5,6 +5,10 @@ class TravelPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    record.user == user
+  end
+
   def show?
     return true
   end
