@@ -16,4 +16,7 @@
   <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
     <%= link_to 'Add a booking', new_travel_booking_path(@travel) %>
   </button>
+  <% if policy(Travel).create? %>
+    <%= link_to "New Travel", new_travel_path %>
+  <% end %>
 </div>
