@@ -1,5 +1,8 @@
 <div class="mx-auto text-center" style="width: 100%">
-  <h1>
+  
+<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+
+      <h1>
     <%= @travel.title %>
   </h1>
   <p>
