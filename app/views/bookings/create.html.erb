@@ -1,0 +1,8 @@
+<%= simple_form_for [@travel, @booking] do |f| %>
+  <%= f.input :note %>
+  <%= f.select :date %>
+  <%= f.submit "post", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "back" travel_path(@travel), class: "btn btn-primary" %>
+<%= link_to "index" travels_path, class: "btn btn-primary" %>
