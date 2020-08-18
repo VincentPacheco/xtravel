@@ -50,7 +50,7 @@ class TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:title, :description, :price)
+    params.require(:travel).permit(:title, :description, :price, :photo)
   end
 
 end
