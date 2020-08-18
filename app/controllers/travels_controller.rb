@@ -6,6 +6,7 @@ class TravelsController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
+    @booking = Booking.new
     authorize @travel
   end
 
@@ -15,7 +16,7 @@ class TravelsController < ApplicationController
   end
 
   def create
-    current_user.travels.new(travel_params)
+    @travel = Travel.new(travel_params)
     authorize @travel
     @travel.user = current_user
     if @travel.save!

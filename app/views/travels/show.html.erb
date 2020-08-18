@@ -5,6 +5,19 @@
   <p>
     <%= @travel.description %>
   </p>
+
+<% if current_user == @travel.user %>
+  <% @travel.bookings.each do |booking| %>
+    <li>
+      <%= booking.note %> || <%= booking.date %>
+      <%= link_to "Delete booking", booking_path(booking), method: :delete %>
+      </li>
+  <% end %>
+<% else %>
+  <%= render 'bookings/form', travel: @travel, booking: @booking %>
+<% end %>
+
+
   <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
     <%= link_to 'Back to homepage', travels_path %>
   </button>
