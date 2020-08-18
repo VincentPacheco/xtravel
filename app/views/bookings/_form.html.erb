@@ -1,0 +1,5 @@
+<%= simple_form_for [travel, booking] do |f| %>
+  <%= f.input :note %>
+  <%= f.select :date %>
+  <%= f.submit "post", class: "btn btn-primary" %>
+<% end %>
