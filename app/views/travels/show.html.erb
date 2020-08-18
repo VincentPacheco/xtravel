@@ -1,0 +1,25 @@
+
+
+
+<div class="mx-auto text-center" style="width: 100%">
+  <h1>
+    <%= @travel.title %>
+  </h1>
+
+<div class="d-flex justify-content-around" style="width: 100%; margin-top: 50px">
+  <ul class="list-group">
+    <% @travel.bookings.each do |booking| %>
+      <li class="list-group-item border-white">
+        <%= booking.note %><%= link_to "delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+  <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
+    <%= link_to 'Back to homepage', travels_path %>
+  </button>
+  <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
+    <%= link_to 'Add a booking of ingredient', new_travel_booking_path(@travel) %>
+  </button>
+</div>
