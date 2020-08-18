@@ -1,9 +1,9 @@
 <div class="mx-auto text-center" style="width: 100%">
 
-<% if @travel.photo.key != nil %>
+<% if @travel.photo.attached? %>
 <%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %>
 <% else %>
-<% image_tag "voyage.jpg" %>
+<%= image_tag "voyage.jpg" %>
 <% end %>
 
       <h1>
