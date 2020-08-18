@@ -10,12 +10,12 @@ class TravelsController < ApplicationController
   end
 
   def new
-    @travel = user.travels.new
+    @travel = Travel.new
     authorize @travel
   end
 
   def create
-    current_user.travels.new(travel_params)
+    @travel = Travel.new(travel_params)
     authorize @travel
     @travel.user = current_user
     if @travel.save!
