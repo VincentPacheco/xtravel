@@ -27,6 +27,13 @@
 <% else %>
   <%= render 'bookings/form', travel: @travel, booking: @booking %>
 <% end %>
+
+<% if @bookings %>
+  <% @bookings.each do |booking|%>
+    <%= booking.date %>
+  <% end %>
+<%end%>
+
 </ul>
 
 
