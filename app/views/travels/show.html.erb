@@ -14,8 +14,8 @@
   </p>
 
 <ul>
-<h1>Booking</h1>
 <% if current_user == @travel.user %>
+  <h1>Booking</h1>
   <% @travel.bookings.each do |booking| %>
     <li>
       <%= booking.note %> || <%= booking.date %>
