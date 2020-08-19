@@ -2,11 +2,13 @@ class BookingsController < ApplicationController
   before_action :set_travel, only: [:new, :create]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def show
-    @booking = Booking.find(params[:id])
+    raise
+    @booking = Travel.find_by(params[:booking])
+    # authorize @travel
   end
 
   def create
@@ -29,7 +31,7 @@ class BookingsController < ApplicationController
     #     redirect_to travel_path(@travel)
     #   else
     #     render "travels/show"
-    #   end   
+    #   end
     # end
   end
 

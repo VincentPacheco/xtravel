@@ -1,17 +1,24 @@
-<% if policy(Travel).create? %>
-  <%= link_to "New Travel", new_travel_path %>
-<% end %>
+<div style="display: flex">
+  <div style="width: 50%; height: 2000px">
+    <% if policy(Travel).create? %>
+      <%= link_to "New Travel", new_travel_path %>
+    <% end %>
 
-<% @travels.each do |travel| %>
-  <h1><%= travel.title %></h1>
-  <p><%= travel.description %></p>
-  <% if policy(travel).show? %>
-    <%= link_to "Show", travel %>
-  <% end %>
-  <% if policy(travel).edit? %>
-    <%= link_to "Update", edit_travel_path(travel) %>
-  <% end %>
-  <% if policy(travel).destroy? %>
-    <%= link_to "Destroy", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-<% end %>
+    <% @travels.each do |travel| %>
+      <h1><%= travel.title %></h1>
+      <p><%= travel.description %></p>
+      <% if policy(travel).show? %>
+        <%= link_to "Show", travel %>
+      <% end %>
+      <% if policy(travel).edit? %>
+        <%= link_to "Update", edit_travel_path(travel) %>
+      <% end %>
+      <% if policy(travel).destroy? %>
+        <%= link_to "Destroy", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  </div>
+  <div style="position: relative; right: 0px; top: 0px; height: 1500px; background-color: red">
+    <embed style="width: 500px; height: 100%" src="https://www.google.com/sky/#latitude=-54.916814137299234&longitude=-114.94689051341643&zoom=11&Spitzer=100.00&ChandraXO=0.00&Galex=0.00&IRAS=0.00&WMAP=0.00&Cassini=0.00&slide=10&mI=1&oI=6" type="" >
+  </div>
+</div>
