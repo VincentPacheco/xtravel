@@ -1,12 +1,118 @@
-.navbar-lewagon {
+div {
+  display: block;
+}
+
+input, button {
+    position: relative;
+}
+
+a, button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+}
+
+.header--desktop {
+  border-bottom: none;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.0625rem solid #e5e5e5;
+  z-index: 5;
+}
+
+.header .header-bottom {
+  width: 100%;
+  height: 5rem;
+  height: 120px;
+  background-color: white;
+}
+
+.header .header-bottom-content {
+  display: flex;
+  width: 100%;
+  height: 5rem;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  padding: 0 1.78125rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.header .header-bottom .header-left, .header .header-bottom .header-right {
+  flex: 1;
+  display: flex;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.header .header-bottom .header-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header-bottom .header-right {
+  justify-content: flex-end;
+}
+
+.dropbtn {
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.nav_btn_home {
+  padding-top: 25px;
+}
+
+.nav_btn_log {
+  padding-top: 5px;
+  width: 55px;
+  height: 55px;
+}
+
+.nav_btn_drop {
+  padding-top: 5px;
+  width: 55px;
+  height: 55px;
 }
