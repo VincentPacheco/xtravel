@@ -7,6 +7,7 @@ class TravelsController < ApplicationController
   def show
     @travel = Travel.find(params[:id])
     @booking = Booking.new
+    @bookings = @travel.bookings.where(user: current_user)
     authorize @travel
   end
 
