@@ -1,7 +1,15 @@
 class TravelsController < ApplicationController
 
   def index
-    @travels = policy_scope(Travel).order(created_at: :desc)
+    @travels = policy_scope(Travel.geocoded).order(created_at: :desc).geocoded
+    # @travels = Travel # returns flats with coordinates
+
+    @markers = @travels.map do |travel|
+      {
+        lat: travel.latitude,
+        lng: travel.longitude
+      }
+    end
   end
 
   def show
