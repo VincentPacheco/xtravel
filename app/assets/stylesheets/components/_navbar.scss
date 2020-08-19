@@ -26,8 +26,10 @@ a, button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-bottom: 0.0625rem solid #e5e5e5;
+  border-bottom: solid #2C40AE;
+  border-width: thin;
   z-index: 5;
+  margin-bottom: 1px;
 }
 
 .header .header-bottom {
