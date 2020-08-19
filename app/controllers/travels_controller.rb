@@ -7,7 +7,9 @@ class TravelsController < ApplicationController
     @markers = @travels.map do |travel|
       {
         lat: travel.latitude,
-        lng: travel.longitude
+        lng: travel.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { travel: travel }),
+        image_url: helpers.asset_url('logoxtravel.png')
       }
     end
   end
