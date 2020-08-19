@@ -6,7 +6,7 @@
 <%= image_tag "voyage.jpg" %>
 <% end %>
 
-      <h1>
+  <h1>
     <%= @travel.title %>
   </h1>
   <p>
@@ -25,6 +25,7 @@
       </li>
   <% end %>
 <% else %>
+  <h1>Booking</h1>
   <%= render 'bookings/form', travel: @travel, booking: @booking %>
 <% end %>
 
