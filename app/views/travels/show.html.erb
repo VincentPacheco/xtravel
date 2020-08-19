@@ -1,4 +1,11 @@
 <div class="mx-auto text-center" style="width: 100%">
+
+<% if @travel.photo.attached? %>
+<%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+<%= image_tag "voyage.jpg" %>
+<% end %>
+
   <h1>
     <%= @travel.title %>
   </h1>
@@ -6,20 +13,37 @@
     <%= @travel.description %>
   </p>
 
-    <% @travel.bookings.each do |booking| %>
-      <li>
-        <%= booking.note %> || <%= booking.date %>
-        <%= link_to "Delete booking", booking_path(booking), method: :delete %>
-        </li>
-    <% end %>
+<ul>
+<% if current_user == @travel.user %>
+  <h1>Booking</h1>
+  <% @travel.bookings.each do |booking| %>
+    <li>
+      <%= booking.note %> || <%= booking.date %>
+<%= link_to "Index", bookings_path, class: "btn btn-primary"%>
+<%= link_to "Add note", new_booking_review_path(@booking), class: "btn btn-primary" %>
+      <%= link_to "Delete booking", booking_path(booking), method: :delete %>
+      </li>
+  <% end %>
+<% else %>
+  <h1>Booking</h1>
+  <%= render 'bookings/form', travel: @travel, booking: @booking %>
+<% end %>
+
+<% if @bookings %>
+  <% @bookings.each do |booking|%>
+    <%= booking.date %>
+  <% end %>
+<%end%>
+
+</ul>
+
 
   <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
     <%= link_to 'Back to homepage', travels_path %>
   </button>
   <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
-    <%= link_to 'Add a booking', new_travel_booking_path(@travel) %>
+    <% if policy(Travel).create? %>
+      <%= link_to "New Travel", new_travel_path %>
+    <% end %>
   </button>
-  <% if policy(Travel).create? %>
-    <%= link_to "New Travel", new_travel_path %>
-  <% end %>
 </div>

@@ -6,11 +6,13 @@ class TravelsController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
+    @booking = Booking.new
+    @bookings = @travel.bookings.where(user: current_user)
     authorize @travel
   end
 
   def new
-    @travel = Travel.new
+    @travel = current_user.travels.new
     authorize @travel
   end
 
@@ -49,7 +51,7 @@ class TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:title, :description, :price)
+    params.require(:travel).permit(:title, :description, :price, :photo)
   end
 
 end

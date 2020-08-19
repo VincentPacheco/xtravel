@@ -9,18 +9,28 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
-    @booking = booking.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.travel = @travel
+    authorize @booking
+    @booking.user = current_user
     if @booking.save
       redirect_to travel_path(@travel)
     else
-      render :new
+      render "travels/show"
+      # flash.alert = "Date already taken!"
     end
+
+    # if @booking.exists?(date)
+    #   render "travels/show"
+    #   flash.alert = "Date already taken!"
+    # else
+    #   if @booking.save
+    #     redirect_to travel_path(@travel)
+    #   else
+    #     render "travels/show"
+    #   end   
+    # end
   end
 
   private
