@@ -7,20 +7,20 @@
     <% @travels.each do |travel| %>
       <h1><%= travel.title %></h1>
       <p><%= travel.description %></p>
-      <%= image_tag "Mars.png"%>
+
       <p><%= travel.longdescription %></p>
       <p><%= travel.duration %></p>
       <p><%= travel.price %></p>
 
 
       <% if policy(travel).show? %>
-        <%= link_to "Show", travel %>
+        <%= link_to image_tag "Mars.png", travel %>
       <% end %>
       <% if policy(travel).edit? %>
-        <%= link_to "Update", edit_travel_path(travel) %>
+        <%= link_to "Edit", edit_travel_path(travel) %>
       <% end %>
       <% if policy(travel).destroy? %>
-        <%= link_to "Destroy", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Delete", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     <% end %>
   </div>
