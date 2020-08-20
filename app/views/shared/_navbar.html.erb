@@ -6,7 +6,7 @@
           <div class="dropdown">
             <button class="dropbtn"><%= image_tag "dropdownxtravel.png", :class => "nav_btn_drop"%></button>
               <div class="dropdown-content">
-                <a href="https://xtravel.herokuapp.com/travels">Travels</a>
+                <%= link_to 'Travels', travels_path %>
                 <a href="#">Spaceships</a>
                 <a href="#">My bookings</a>
               </div>
@@ -14,9 +14,9 @@
         </nav>
       </div>
     <div class="header-center">
-      <a class="logo" aria-label="Link to Homepage" href="http://xtravel.herokuapp.com/">
-        <%= image_tag "logoxtravel.png", :class => "nav_btn_home" %>
-      </a>
+      <%= link_to root_path, class: 'logo', aria: { label: 'Link to homepage' } do %>
+        <%= image_tag 'logoxtravel.png', class: 'nav_btn_home' %>
+      <% end %>
     </div>
       <div class="header-right">
         <div class="header-group">
