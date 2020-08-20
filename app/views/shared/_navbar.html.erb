@@ -20,6 +20,9 @@
           <div class="dropdown-content">
              <% if user_signed_in? %>
       <li class="nav-item" style="color: white!important; text-align: left!important;">
+          <%= link_to "Add a travel", new_travel_path, class: "nav-link" , id: "navlinkwhite" %>
+      </li>
+      <li class="nav-item" style="color: white!important; text-align: left!important;">
           <%= link_to "Travels", travels_path, class: "nav-link" , id: "navlinkwhite" %>
       </li> <li class="nav-item" style="color: white!important; text-align: left!important;">
           <%= link_to "My bookings", bookings_path, class: "nav-link" , id: "navlinkwhite" %>

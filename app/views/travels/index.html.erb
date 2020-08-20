@@ -1,31 +1,49 @@
-<div style="display: flex">
-  <div style="width: 50%; height: 2000px">
-    <% if policy(Travel).create? %>
-      <%= link_to "New Travel", new_travel_path %>
-    <% end %>
-
-    <% @travels.each do |travel| %>
-      <%= image_tag "Mars.png"%>
-      <h1><%= travel.title %></h1>
-      <p><%= travel.duration %></p>
-      <p><%= travel.price %></p>
-      <p><%= travel.capacity %></p>
-
-      <% if policy(travel).show? %>
-        <%= link_to image_tag("Mars.png"), travel_path(travel) %>
-      <% end %>
-      <% if policy(travel).edit? %>
-        <%= link_to "Edit", edit_travel_path(travel) %>
-      <% end %>
-      <% if policy(travel).destroy? %>
-        <%= link_to "Delete", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+<div class="card-index" style="display: flex">
+  <% half = @travels.count / 2 %>
+  <div class="column-left">
+    <% @travels[0..half].each do |travel| %>
+      <div class="card-full">
+        <% if policy(travel).show? %>
+          <%= link_to travel_path(travel), class: "d-flex" do  %>
+            <div class="card-travel-index">
+              <%= cl_image_tag travel.photo.key, height: 200, width: 398, crop: :fill %>
+              <h1><%= travel.title %></h1>
+            </div>
+          <% end %>
+          <div class="card-text">
+            <h2><strong><%= travel.price %></strong> €</h2>
+            <hr />
+            <h2><strong><%= travel.capacity %></strong> travelers</h2>
+            <hr />
+            <h2><strong><%= travel.duration %></strong> days</h2>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
+  <div id="border-middle"></div>
 
-
-  <div style="position: relative; right: 0px; top: 0px; height: 1500px; background-color: white">
-<!-- <div> <embed style="width: 500px; height: 100%" src="https://www.google.com/sky/#latitude=-54.916814137299234&longitude=-114.94689051341643&zoom=11&Spitzer=100.00&ChandraXO=0.00&Galex=0.00&IRAS=0.00&WMAP=0.00&Cassini=0.00&slide=10&mI=1&oI=6" type="" >
-  </div> -->
+  <div class="column-right">
+    <% @travels[half + 1..-1].each do |travel| %>
+      <div class="card-full">
+        <% if policy(travel).show? %>
+          <%= link_to travel_path(travel), class: "d-flex" do  %>
+            <div class="card-travel-index">
+              <%= cl_image_tag travel.photo.key, height: 200, width: 398, crop: :fill %>
+              <h1><%= travel.title %></h1>
+            </div>
+          <% end %>
+          <div class="card-text">
+            <h2><strong><%= travel.price %></strong> €</h2>
+            <hr />
+            <h2><strong><%= travel.capacity %></strong> travelers</h2>
+            <hr />
+            <h2><strong><%= travel.duration %></strong> days</h2>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
