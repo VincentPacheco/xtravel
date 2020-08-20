@@ -25,7 +25,7 @@ const addMarkersToMap = (map, markers) => {
 
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup);
+      .setPopup(popup)
       .addTo(map);
   });
 };
@@ -42,10 +42,9 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
   }
 
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
 };
 
 export { initMapbox };
