@@ -5,13 +5,12 @@
     <% end %>
 
     <% @travels.each do |travel| %>
-      <h1><%= travel.title %></h1>
-      <p><%= travel.description %></p>
 
-      <p><%= travel.longdescription %></p>
+      <%= image_tag "Mars.png"%>
+      <h1><%= travel.title %></h1>
       <p><%= travel.duration %></p>
       <p><%= travel.price %></p>
-
+      <p><%= travel.capacity %></p>
 
       <% if policy(travel).show? %>
         <%= link_to image_tag "Mars.png", travel %>
@@ -25,7 +24,9 @@
     <% end %>
   </div>
 
-<!--   <div style="position: relative; right: 0px; top: 0px; height: 1500px; background-color: red">
-    <embed style="width: 500px; height: 100%" src="https://www.google.com/sky/#latitude=-54.916814137299234&longitude=-114.94689051341643&zoom=11&Spitzer=100.00&ChandraXO=0.00&Galex=0.00&IRAS=0.00&WMAP=0.00&Cassini=0.00&slide=10&mI=1&oI=6" type="" >
+
+
+  <div style="position: relative; right: 0px; top: 0px; height: 1500px; background-color: white">
+<!-- <div> <embed style="width: 500px; height: 100%" src="https://www.google.com/sky/#latitude=-54.916814137299234&longitude=-114.94689051341643&zoom=11&Spitzer=100.00&ChandraXO=0.00&Galex=0.00&IRAS=0.00&WMAP=0.00&Cassini=0.00&slide=10&mI=1&oI=6" type="" >
   </div> -->
 </div>
