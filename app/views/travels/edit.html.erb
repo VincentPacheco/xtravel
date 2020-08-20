@@ -1,8 +1,10 @@
 <div class="container">
   <%= simple_form_for(@travel) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :price %>
+    <%= f.input :title, label: 'Title' %>
+    <%= f.input :description, label: 'Subtitle' %>
+    <%= f.input :longdescription, label: 'Description' %>
+    <%= f.input :duration, label: 'Duration' %>
+    <%= f.input :price, label: 'Price' %>
     <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>
