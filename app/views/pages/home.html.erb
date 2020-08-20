@@ -3,15 +3,17 @@
 </div>
 
 <div class="container">
-    <a href="https://xtravel.herokuapp.com/travels"><div class="card-category">
-    <%= image_tag "Planetscategoryimage.png"%>
-    <div class="card-trip-infos">
-      <div>
-        <h2 class="title">TRAVELS</h2>
+
+  <%= link_to travels_path do %>
+    <div class="card-category">
+      <%= image_tag 'Planetscategoryimage.png' %>
+      <div class="card-trip-infos">
+        <div>
+          <h2 class="title">Travels</h2>
+        </div>
       </div>
     </div>
-  </div></a>
-
+  <% end %>
 
     <a href="#"><div class="card-category">
     <%= image_tag "spaceshipscategoryimage.png"%>

@@ -36,20 +36,7 @@
   <% @bookings.each do |booking|%>
     <%= booking.date %>
   <% end %>
-<%end%>
+<% end %>
 
 </ul>
-
-
-  <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
-    <%= link_to 'Back to homepage', travels_path %>
-  </button>
-  <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
-    <% if policy(Travel).create? %>
-      <%= link_to "New Travel", new_travel_path %>
-    <% end %>
-  </button>
-  <button type="button" class="btn btn-outline-primary" data-toggle="button" aria-pressed="false" style="margin-top: 50px">
-    <%= link_to 'My bookings', bookings_path %>
-  </button>
 </div>

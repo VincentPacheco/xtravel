@@ -3,27 +3,45 @@
     <div class="header-bottom-content">
       <div class ="header-left">
         <nav class ="header-group" aria-label="Header menu principal">
-          <div class="dropdown">
-            <button class="dropbtn"><%= image_tag "dropdownxtravel.png", :class => "nav_btn_drop"%></button>
-              <div class="dropdown-content">
-                <a href="https://xtravel.herokuapp.com/travels">Travels</a>
-                <a href="#">Spaceships</a>
-                <a href="#">My bookings</a>
-              </div>
-            </div>
+
         </nav>
       </div>
     <div class="header-center">
-      <a class="logo" aria-label="Link to Homepage" href="http://xtravel.herokuapp.com/">
+      <%= link_to root_path do %>
         <%= image_tag "logoxtravel.png", :class => "nav_btn_home" %>
+      <% end %>
       </a>
+
     </div>
-      <div class="header-right">
-        <div class="header-group">
-          <%= link_to image_tag('loginxtravel.png'), user_session_path%>
-          </a>
-        </div>
+  <div class="header-right">
+    <div class="header-group">
+      <div class="dropdown">
+        <button class="dropbtn"><%= image_tag "loginxtravel.png", :class => "nav_btn_drop"%></button>
+          <div class="dropdown-content">
+             <% if user_signed_in? %>
+      <li class="nav-item" style="color: white!important; text-align: left!important;">
+          <%= link_to "Travels", travels_path, class: "nav-link" , id: "navlinkwhite" %>
+      </li> <li class="nav-item" style="color: white!important; text-align: left!important;">
+          <%= link_to "My bookings", bookings_path, class: "nav-link" , id: "navlinkwhite" %>
+      </li>
+       <li class="nav-item" style="color: white!important;text-align: left!important">
+            <p> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" , id: "navlinkwhite" %></p>
+      </li>
+        <% else %>
+      <li class="nav-item" style="color: white!important; text-align: left!important;">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" , id: "navlinkwhite" %>
+      </li>
+      <li class="nav-item" style="color: white!important; text-align: left!important;">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" , id: "navlinkwhite" %>
+      </li>
+    </ul>
+<% end %>
+          </div>
       </div>
     </div>
   </div>
+    </div>
+  </div>
 </header>
+
+<!--           <%= link_to image_tag('loginxtravel.png'), user_session_path%> -->

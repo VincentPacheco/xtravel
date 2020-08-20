@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
 div {
   display: block;
 }
@@ -79,17 +81,20 @@ a, button {
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 25px;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  text-align: center;
 }
 
 .dropdown-content a {
-  color: black;
+  color: #2C40AE;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-family: 'Comfortaa', cursive;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
