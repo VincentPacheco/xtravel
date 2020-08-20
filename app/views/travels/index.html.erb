@@ -6,8 +6,13 @@
 
     <% @travels.each do |travel| %>
       <h1><%= travel.title %></h1>
-      <%= image_tag "Mars.png"%>
       <p><%= travel.description %></p>
+      <%= image_tag "Mars.png"%>
+      <p><%= travel.longdescription %></p>
+      <p><%= travel.duration %></p>
+      <p><%= travel.price %></p>
+
+
       <% if policy(travel).show? %>
         <%= link_to "Show", travel %>
       <% end %>
