@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
 .container {
   display: flex;
   margin-top: 30px;
   margin: auto;
   padding: 0px;
-  justify-content: space-around;
+  justify-content: space-between;
 
 }
 
@@ -14,12 +16,18 @@
   border-radius: 9px;
   text-align: center;
   position: center;
+  width: 350px;
 
 }
 
 .card-category img {
-  width: 350px;
+  width: 348px;
   height: 215px;
+}
+
+.title {
+  color: #2C40AE;
+  padding-top: 10px;
 }
 
 .title :hover {
@@ -27,53 +35,66 @@
   opacity: 0.8;
 }
 
-.booking-card {
-  border: 1px solid;
-  border-radius: 5px;
-  border-color: rgba(8, 150, 253, 1);
-  padding: 10px;
+.homepara p {
+    font-family: 'Comfortaa', cursive;
+    color: #2C40AE;
+    font-size: 22px;
+    justify-content: center;
+    padding-top: 48px;
+    text-align: center;
+    margin-left: 220px;
+    margin-right: 220px;
 }
 
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
+// .booking-card {
+//   border: 1px solid;
+//   border-radius: 5px;
+//   border-color: rgba(8, 150, 253, 1);
+//   padding: 10px;
+// }
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+// .card-trip {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-trip > img {
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+// }
 
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .card-trip h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+//   text-align: center;
+// }
+
+// .card-trip p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
 
 
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
+// .card-trip .card-trip-infos {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
 
-}
+// }
 
-div.card-trip-infos {
-  min-width: 400px;
-}
+// div.card-trip-infos {
+//   min-width: 400px;
+// }
+

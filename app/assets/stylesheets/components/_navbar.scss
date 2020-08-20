@@ -69,6 +69,7 @@ a, button {
 
 .dropbtn {
   padding: 16px;
+  padding-top: 55px;
   border: none;
   cursor: pointer;
 }
@@ -81,7 +82,7 @@ a, button {
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 25px;
+  right: 20px;
   background-color: #f9f9f9;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -114,12 +115,12 @@ a, button {
 
 .nav_btn_log {
   padding-top: 5px;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 }
 
 .nav_btn_drop {
   padding-top: 5px;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 }
