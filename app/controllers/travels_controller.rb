@@ -1,5 +1,4 @@
 class TravelsController < ApplicationController
-
   def index
     @travels = policy_scope(Travel.geocoded).order(created_at: :desc).geocoded
     # @travels = Travel # returns flats with coordinates
@@ -61,7 +60,6 @@ class TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:title, :description, :price, :photo)
+    params.require(:travel).permit(:title, :description, :longdescription, :price, :photo, :address, :capacity, :duration)
   end
-
 end

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+.card-travel-index {
+  border: solid;
+  border-color: #2C40AE;
+  border-width: thin;
+  border-radius: 9px;
+  text-align: center;
+  width: 400px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 35px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text {
+  display: flex;
+  border: solid;
+  border-left: none;
+  border-color: #2C40AE;
+  border-width: thin;
+  border-radius: 9px;
+  text-align: center;
+  width: 300px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 25px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text p {
+  color: #2C40AE;
+  margin: 0;
+}
+
+.card-text h2 {
+  color: black;
+  margin: 0;
+}
+
+.card-travel-index img {
+  border-radius: 9px 9px 0px 0px;
+}
+
+.column-left {
+  padding-right: 100px;
+  border-right: solid 1px #2C40AE;
+  div:last-child{
+    margin-bottom: 0px;
+  }
+}
+
+.column-right {
+  padding-left: 100px;
+}
+
+.card-index {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-full {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+hr {
+  height: 1px;
+  border-top: 1px solid #2C40AE;
+  display: block;
+  margin: 1em;
+}
