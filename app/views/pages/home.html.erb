@@ -7,33 +7,16 @@
 </div>
 
 <div class="container">
-  <%= link_to travels_path do %>
-    <div class="card-category">
-      <%= image_tag 'Planetscategoryimage.png' %>
-      <div class="card-trip-infos">
-        <div>
-          <h2 class="title">TRIP 1</h2>
+  <% @travels.each do |travel| %>
+    <%= link_to travel_path(travel) do %>
+      <div class="card-category">
+        <%= cl_image_tag travel.photo.key %>
+        <div class="card-trip-infos">
+          <div>
+           <h2 class="title"><%= travel.title %></h2>
+          </div>
         </div>
       </div>
-    </div>
+     <% end %>
   <% end %>
-
-    <a href="#"><div class="card-category">
-    <%= image_tag "spaceshipscategoryimage.png"%>
-    <div class="card-trip-infos">
-      <div>
-        <h2 class="title">TRIP 2</h2>
-      </div>
-    </div>
-  </div></a>
-
-
-    <a href="#"><div class="card-category">
-    <%= image_tag "tripscategoryimage.png"%>
-    <div class="card-trip-infos">
-      <div>
-        <h2 class="title">TRIP 3</h2>
-      </div>
-    </div>
-  </div></a>
 </div>
