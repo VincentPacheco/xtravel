@@ -12,10 +12,10 @@
         <%= link_to "Show", travel %>
       <% end %>
       <% if policy(travel).edit? %>
-        <%= link_to "Update", edit_travel_path(travel) %>
+        <%= link_to "Edit", edit_travel_path(travel) %>
       <% end %>
       <% if policy(travel).destroy? %>
-        <%= link_to "Destroy", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Delete", travel , method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     <% end %>
   </div>
