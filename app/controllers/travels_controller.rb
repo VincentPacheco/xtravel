@@ -1,7 +1,17 @@
 class TravelsController < ApplicationController
 
   def index
-    @travels = policy_scope(Travel).order(created_at: :desc)
+    @travels = policy_scope(Travel.geocoded).order(created_at: :desc).geocoded
+    # @travels = Travel # returns flats with coordinates
+
+    @markers = @travels.map do |travel|
+      {
+        lat: travel.latitude,
+        lng: travel.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { travel: travel }),
+        image_url: helpers.asset_url('logoxtravel.png')
+      }
+    end
   end
 
   def show

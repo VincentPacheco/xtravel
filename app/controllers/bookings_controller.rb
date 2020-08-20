@@ -6,9 +6,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    raise
-    @booking = Travel.find_by(params[:booking])
-    # authorize @travel
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def create

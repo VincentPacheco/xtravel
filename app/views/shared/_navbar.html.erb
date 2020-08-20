@@ -3,6 +3,7 @@
     <div class="header-bottom-content">
       <div class ="header-left">
         <nav class ="header-group" aria-label="Header menu principal">
+<<<<<<< HEAD
         </nav>
       </div>
     <div class="header-center">
@@ -10,6 +11,22 @@
         <%= image_tag "logoxtravel.png", :class => "nav_btn_home" %>
       <% end %>
       </a>
+=======
+          <div class="dropdown">
+            <button class="dropbtn"><%= image_tag "dropdownxtravel.png", :class => "nav_btn_drop"%></button>
+              <div class="dropdown-content">
+                <%= link_to 'Travels', travels_path %>
+                <a href="#">Spaceships</a>
+                <a href="#">My bookings</a>
+              </div>
+            </div>
+        </nav>
+      </div>
+    <div class="header-center">
+      <%= link_to root_path, class: 'logo', aria: { label: 'Link to homepage' } do %>
+        <%= image_tag 'logoxtravel.png', class: 'nav_btn_home' %>
+      <% end %>
+>>>>>>> master
     </div>
   <div class="header-right">
     <div class="header-group">
