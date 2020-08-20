@@ -12,7 +12,7 @@
       <p><%= travel.capacity %></p>
 
       <% if policy(travel).show? %>
-        <%= link_to image_tag "Mars.png", travel_path(travel) %>
+        <%= link_to image_tag("Mars.png"), travel_path(travel) %>
       <% end %>
       <% if policy(travel).edit? %>
         <%= link_to "Edit", edit_travel_path(travel) %>
