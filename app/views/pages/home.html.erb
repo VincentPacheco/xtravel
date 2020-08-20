@@ -1,37 +1,22 @@
-<div class="banner">
-  <%= image_tag "banniereavecmessage.png"%>
+<div class="banner" style="background-image: url(https://res.cloudinary.com/vincentpacheco/image/upload/v1597939315/espace_npnodb.jpg);">
+  <div class="content">
+     <h1><strong>Welcome aboard.</strong></h1>
+    <p>Send yourself to the infinite and beyond.</p>
+    <%= link_to "Find now", travels_path, class: "btn btn-flat" %>
+  </div>
 </div>
 
 <div class="container">
-
-  <%= link_to travels_path do %>
-    <div class="card-category">
-      <%= image_tag 'Planetscategoryimage.png' %>
-      <div class="card-trip-infos">
-        <div>
-          <h2 class="title">Travels</h2>
+  <% @travels.each do |travel| %>
+    <%= link_to travel_path(travel) do %>
+      <div class="card-category">
+        <%= cl_image_tag travel.photo.key %>
+        <div class="card-trip-infos">
+          <div>
+           <h2 class="title"><%= travel.title %></h2>
+          </div>
         </div>
       </div>
-    </div>
+     <% end %>
   <% end %>
-
-    <a href="#"><div class="card-category">
-    <%= image_tag "spaceshipscategoryimage.png"%>
-    <div class="card-trip-infos">
-      <div>
-        <h2 class="title">SPACESHIPS</h2>
-      </div>
-    </div>
-  </div></a>
-
-
-    <a href="#"><div class="card-category">
-    <%= image_tag "tripscategoryimage.png"%>
-    <div class="card-trip-infos">
-      <div>
-        <h2 class="title">TRIPS</h2>
-      </div>
-    </div>
-  </div></a>
-
 </div>
