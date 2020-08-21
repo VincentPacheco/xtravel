@@ -1,11 +1,3 @@
-<!-- <<<<<<< HEAD
-<%#= simple_form_for [travel, booking] do |f| %>
-  <%#= f.input :note %>
-  <%#= f.input :date %>
-  <%#= f.submit "BOOKING", class: "btn btn-primary" %>
-<%# end %>
-0
-======= -->
 <div class="d-flex justify-content-around" style="width: 100%">
   <%= simple_form_for [travel, booking] do |f| %>
     <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Click and choose a liftoff date' %>
