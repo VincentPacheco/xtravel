@@ -40,7 +40,7 @@ puts'Generating admin'
 admin = User.create do |user|
   user.admin = true
   user.email = 'admin@xtravel.com'
-  user.password = 'xtravel-admin'
+  user.password = '123456'
 end
 
 puts'Generating organizers'
