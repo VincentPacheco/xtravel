@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-around" style="width: 100%">
   <%= simple_form_for [travel, booking] do |f| %>
-    <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Choose your departure date' %>
+    <%= f.input :date, required: false, input_html: {class: "datepicker"}, placeholder: 'Choose your departure date' %>
     <%= f.text_area :note, :style => "line-height: 50px; width: 400px", placeholder: 'Add a comment here'  %>
     <br>
     <br>
