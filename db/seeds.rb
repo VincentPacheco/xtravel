@@ -89,8 +89,8 @@ puts'Generating travels'
     travel.title = planet
     travel.address = planet
     travel.price = price
-    travel.description = Faker::Games::Overwatch.quote
-    travel.longdescription = Faker::Games::WorldOfWarcraft.quote
+    travel.description = Faker::Quote.matz
+    travel.longdescription = Faker::Quote.famous_last_words
     travel.duration = Faker::Number.within(range: 45..170)
     travel.capacity = Faker::Number.within(range: 40..250)
     travel.latitude = latitude
