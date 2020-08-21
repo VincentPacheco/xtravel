@@ -9,25 +9,25 @@
 <div class="mx-auto text-center" style="width: 100%">
 
 <% if @travel.photo.attached? %>
-<%= cl_image_tag(@travel.photo.key, height: 300, width: 400, crop: :fill, :style => "border-radius: 25px 25px 25px 25px") %>
+  <%= cl_image_tag(@travel.photo.key, height: 300, width: 400, crop: :fill, :style => "border-radius: 25px 25px 25px 25px") %>
 <% else %>
-<%= image_tag "voyage.jpg", :style => "border-radius: 25px 25px 25px 25px" %>
+  <%= image_tag "voyage.jpg", :style => "border-radius: 25px 25px 25px 25px" %>
 <% end %>
 
 
 <ul>
 <% if @bookings && current_user == @travel.user %>
-<br>
-  <% @travel.bookings.each do |booking| %>
+  <br>
+    <% @travel.bookings.each do |booking| %>
+        <br>
       <br>
-    <br>
-    <li>
-      <%= booking.note %> || <%= booking.date %>
-<%#= link_to "Add note", new_booking_review_path(@booking), class: "btn btn-primary" %>
-<%= link_to "Index", bookings_path, class: "btn btn-primary"%>
-      <%= link_to "Delete booking", booking_path(booking), method: :delete %>
-      </li>
-  <% end %>
+      <li>
+        <%= booking.note %> || <%= booking.date %>
+  <%#= link_to "Add note", new_booking_review_path(@booking), class: "btn btn-primary" %>
+  <%= link_to "Index", bookings_path, class: "btn btn-primary"%>
+        <%= link_to "Delete booking", booking_path(booking), method: :delete %>
+        </li>
+    <% end %>
 <% else %>
     <br>
     <br>
