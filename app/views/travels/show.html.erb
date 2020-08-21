@@ -1,50 +1,53 @@
-<div class="mx-auto text-center" style="width: 100%">
-  <h1>
-    <%= @travel.title %>
-  </h1>
-  <p>
-    <%= @travel.description %>
-  </p>
-</div>
-<div class="mx-auto text-center" style="width: 100%">
+<div class="d-flex justify-content-center">
+    <div class="showborder">
+      <div class="showcontainer">
 
-<% if @travel.photo.attached? %>
-<%= cl_image_tag(@travel.photo.key, height: 300, width: 400, crop: :fill, :style => "border-radius: 25px 25px 25px 25px") %>
-<% else %>
-<%= image_tag "voyage.jpg", :style => "border-radius: 25px 25px 25px 25px" %>
-<% end %>
+        <div class="top">
+          <div class="left">
+            <div class="title">
+              <strong><%= @travel.title %></strong>
+            </div>
+            <div class="show-container-image">
+              <% if @travel.photo.attached? %>
+                <%= cl_image_tag(@travel.photo.key) %>
+              <% else %>
+                <%= image_tag "voyage.jpg", :style => "border-radius: 25px 25px 25px 25px" %>
+              <% end %>
+            </div>
+          </div>
 
-
-<ul>
-<% if @bookings && current_user == @travel.user %>
-<br>
-  <% @travel.bookings.each do |booking| %>
-      <br>
-    <br>
-    <li>
-      <%= booking.note %> || <%= booking.date %>
-<%#= link_to "Add note", new_booking_review_path(@booking), class: "btn btn-primary" %>
-<%= link_to "Index", bookings_path, class: "btn btn-primary"%>
-      <%= link_to "Delete booking", booking_path(booking), method: :delete %>
-      </li>
-  <% end %>
-<% else %>
-    <br>
-    <br>
-  <h1>Booking</h1>
-  <%= render 'bookings/form', travel: @travel, booking: @booking, :style => "margin: 50%" %>
-<% end %>
-<div style="display: inline-flex">
-  <div>
-    <% if @bookings && current_user != @travel.user %>
-    <h6>Your choosen dates</h6>
-    <div style="display: block">
-      <% @bookings.each do |booking|%>
-        <div>
-          <%= booking.date %>
+          <div class="right">
+            <div class="duration label">
+              <div>Duration :&nbsp</div>
+              <div><strong><%= @travel.duration %></strong><span> days</span></div>
+            </div>
+            <div class="price label">
+              <div>Price :&nbsp</div>
+              <div><strong><%= @travel.price %></strong><span> €</span></div>
+            </div>
+            <div class="capacity label">
+              <div>Capacity :&nbsp</div>
+              <div><strong><%= @travel.capacity %></strong><span> travelers</span></div>
+            </div>
+            <div class="description label">
+              <div>Description :&nbsp</div>
+              <div class="description_text">
+              <div><%= @travel.description %></div>
+            </div>
+          </div>
+          </div>
         </div>
-      <% end %>
+        <div class="bottom-container">
+          <div class="bottom">
+            <% unless @bookings && current_user == @travel.user %>
+              <h1>Book this trip!</h1>
+              <%= render 'bookings/form', travel: @travel, booking: @booking, :style => "margin: 50%" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <% end %>
-  </div>
 </div>
+
+
+
