@@ -1,6 +1,11 @@
 require 'faker'
 require 'open-uri'
 
+# Destroy
+User.destroy_all
+Travel.destroy_all
+Booking.destroy_all
+
 # Photos
 photo_urls = [
   'https://res.cloudinary.com/vincentpacheco/image/upload/v1597930309/zqn8ixtxu2497mdgvre38pdjrnhd.jpg',
