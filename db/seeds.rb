@@ -76,7 +76,7 @@ travels = Array.new(10) do
   organizer = organizers.sample
   photo = photos.sample
 
-  planet = Faker::Space.planet
+  planet = Faker::Space.galaxy
   price = Faker::Commerce.price
   latitude = Faker::Address.latitude
   longitude = Faker::Address.longitude
