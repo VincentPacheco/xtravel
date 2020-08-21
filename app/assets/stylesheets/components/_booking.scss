@@ -3,5 +3,35 @@
   font-family: 'Comfortaa', cursive;
   color: #2C40AE;
   font-size: 24px;
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.card-text2 {
+  display: flex;
+  border: solid;
+  border-left: none;
+  border-color: #2C40AE;
+  border-width: thin;
+  border-radius: 9px;
+  text-align: center;
+  width: 300px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  h1{
+    font-family: 'Comfortaa', cursive;
+    font-size: 24px;
+    color: #2C40AE;
+  }
+  h2 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    color: black;
+  }
+  p {
+    font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    color: #2C40AE;
+  }
 }
