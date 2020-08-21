@@ -7,19 +7,21 @@
   <div class="column-left">
     <% @bookings[0..half].each do |booking| %>
       <div class="card-full">
-        <% if policy(booking).show? %>
+        <% if booking.user == current_user %>
             <div class="card-travel-index">
               <%= cl_image_tag booking.travel.photo.key, height: 200, width: 398, crop: :fill %>
               <h1><%= booking.travel.title %></h1>
             </div>
-          <% end %>
           <div class="card-text2">
             <h1><strong>RESUME</strong></h1>
             <h2>Price : <strong><%= booking.travel.price %></strong> €</h2>
             <h2><strong><%= booking.travel.capacity %></strong> travelers - <strong><%= booking.travel.duration %></strong> days</h2>
             <hr />
             <p><%= booking.travel.longdescription %></p>
+            <%= link_to "show", travel_path(booking.travel)  %>
+            <%= link_to "delete", booking_path(booking), method: :delete %>
           </div>
+          <% end %>
       </div>
     <% end %>
   </div>
@@ -29,12 +31,11 @@
   <div class="column-right">
     <% @bookings[half + 1..-1].each do |booking| %>
       <div class="card-full">
-        <% if policy(booking).show? %>
+        <% if booking.user == current_user %>
             <div class="card-travel-index">
               <%= cl_image_tag booking.travel.photo.key, height: 200, width: 398, crop: :fill %>
               <h1><%= booking.travel.title %></h1>
             </div>
-          <% end %>
           <div class="card-text2">
             <h1><strong>RESUME</strong></h1>
             <h2>Price : <strong><%= booking.travel.price %></strong> €</h2>
@@ -42,6 +43,7 @@
             <hr />
             <p><%= booking.travel.longdescription %></p>
           </div>
+          <% end %>
       </div>
     <% end %>
   </div>
