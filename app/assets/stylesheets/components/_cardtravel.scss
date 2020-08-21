@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-
 .card-travel-index {
   border: solid;
   border-color: #2C40AE;
@@ -57,9 +55,10 @@
 }
 
 .card-index {
-  margin-top: 30px;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 .card-full {
@@ -72,4 +71,22 @@ hr {
   border-top: 1px solid #2C40AE;
   display: block;
   margin: 1em;
+}
+
+.card-text2 {
+  display: flex;
+  border: solid;
+  border-left: none;
+  border-color: #2C40AE;
+  border-width: thin;
+  border-radius: 9px;
+  text-align: center;
+  width: 300px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+  }
 }

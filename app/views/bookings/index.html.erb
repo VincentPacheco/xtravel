@@ -1,29 +1,44 @@
-<div class="container" style="display: block;">
-  <br>
-  <h2>Your Bookings </h2>
-  <br>
-    <!-- <div style="display: block;"> -->
-    <% @bookings.each do |booking| %>
-      <!-- <div style="display: flex;"> -->
-        <% if current_user == booking.user %>
-          <div class="card-trip mb-5">
-            <% if booking.travel.photo.attached? %>
-                <%= cl_image_tag booking.travel.photo.key, width: 400, height: 300, crop: :fill %>
-              <% else %>
-                <%= image_tag "cruiser.png" %>
-              <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= booking.travel.title %></h2>
-<!--                 <p><%= booking.note %></p> -->
-              </div>
-              <h2 class="card-trip-pricing"><%=  booking.travel.price  %> €</h2>
-              <%= link_to "show", travel_path(booking.travel_id), class: "btn btn-primary" %>
+<div class="bookingh2">
+  <h2>My Bookings</h2>
+</div>
+
+<div class="card-index" style="display: flex">
+  <% half = @bookings.count / 2 %>
+  <div class="column-left">
+    <% @bookings[0..half].each do |booking| %>
+      <div class="card-full">
+        <% if policy(booking).show? %>
+            <div class="card-travel-index">
+              <%= cl_image_tag booking.travel.photo.key, height: 200, width: 398, crop: :fill %>
+              <h1><%= booking.travel.title %></h1>
             </div>
+          <% end %>
+          <div class="card-text2">
+            <h2><strong><%= booking.travel.price %></strong> € - <strong><%= booking.travel.capacity %></strong> travelers - <strong><%= booking.travel.duration %></strong> days</h2>
+            <hr />
+            <p><%= booking.travel.longdescription %></p>
           </div>
-        <!-- </div> -->
-      <% end %>
-    <!-- </div> -->
+      </div>
+    <% end %>
+  </div>
+
+  <div id="border-middle"></div>
+
+  <div class="column-right">
+    <% @bookings[half + 1..-1].each do |booking| %>
+      <div class="card-full">
+        <% if policy(booking).show? %>
+            <div class="card-travel-index">
+              <%= cl_image_tag booking.travel.photo.key, height: 200, width: 398, crop: :fill %>
+              <h1><%= booking.travel.title %></h1>
+            </div>
+          <% end %>
+          <div class="card-text2">
+            <h2><strong><%= booking.travel.price %></strong> € - <strong><%= booking.travel.capacity %></strong> travelers - <strong><%= booking.travel.duration %></strong> days</h2>
+            <hr />
+            <p><%= booking.travel.longdescription %></p>
+          </div>
+      </div>
     <% end %>
   </div>
 </div>

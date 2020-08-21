@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     if @booking.save
-      redirect_to travel_path(@travel)
+      redirect_to bookings_path
     else
       render "travels/show"
       # flash.alert = "Date already taken!"

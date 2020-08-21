@@ -4,8 +4,6 @@
     <title>X-Travel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +14,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class="fixfooter">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
-  <%= render 'shared/footer' %>
 </html>
