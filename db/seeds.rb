@@ -2,9 +2,9 @@ require 'faker'
 require 'open-uri'
 
 # Destroy
-User.destroy_all
-Travel.destroy_all
 Booking.destroy_all
+Travel.destroy_all
+User.destroy_all
 
 # Photos
 photo_urls = [
