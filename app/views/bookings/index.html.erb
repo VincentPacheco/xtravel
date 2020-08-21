@@ -1,7 +1,7 @@
 <div class="bookingh2">
   <h2>My Bookings</h2>
 </div>
-
+<% if ! @bookings.blank? %>
 <div class="card-index" style="display: flex">
   <% half = @bookings.count / 2 %>
   <div class="column-left">
@@ -42,3 +42,7 @@
     <% end %>
   </div>
 </div>
+
+<% else %>
+<div>No booking yet</div>
+<% end %>

@@ -74,11 +74,11 @@ travels = Array.new(10) do
     travel.latitude = latitude
     travel.longitude = longitude
     # Please uncomment
-    # travel.photo.attach(
-    #   io: photo,
-    #   filename: 'photo.png',
-    #   content_type: 'image/png'
-    # )
+    travel.photo.attach(
+      io: photo,
+      filename: 'photo.png',
+      content_type: 'image/png'
+    )
   end
 end.select(&:valid?)
 
