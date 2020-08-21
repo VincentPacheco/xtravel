@@ -10,7 +10,10 @@
   <% @travels.each do |travel| %>
     <%= link_to travel_path(travel) do %>
       <div class="card-category">
-        <%= cl_image_tag travel.photo.key %>
+      
+        <% if travel.photo.attached? %>
+          <%= cl_image_tag travel.photo.key %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
            <h2 class="title"><%= travel.title %></h2>

@@ -2,6 +2,7 @@ require 'faker'
 require 'open-uri'
 
 # Destroy
+
 puts'Cleaning database'
 Booking.destroy_all
 Travel.destroy_all
