@@ -2,29 +2,28 @@
   <br>
   <h2>Your Bookings </h2>
   <br>
-    <div style="display: block;">
+    <!-- <div style="display: block;"> -->
     <% @bookings.each do |booking| %>
-      <div style="display: flex;">
+      <!-- <div style="display: flex;"> -->
         <% if current_user == booking.user %>
-          <div class="card-trip">
+          <div class="card-trip mb-5">
             <% if booking.travel.photo.attached? %>
-      width: 400, height: 300, crop: :fill) %>
-            <%= cl_image_tag booking.travel.photo.key %>
+                <%= cl_image_tag booking.travel.photo.key, width: 400, height: 300, crop: :fill %>
               <% else %>
-            <%= image_tag "cruiser.png" %>
+                <%= image_tag "cruiser.png" %>
               <% end %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= booking.travel_id %></h2>
-                <p><%= booking.note %></p>
+                <h2><%= booking.travel.title %></h2>
+<!--                 <p><%= booking.note %></p> -->
               </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              <%= link_to "show", travel_path(booking), class: "btn btn-primary" %>
-              </div>
-              </div>
+              <h2 class="card-trip-pricing"><%=  booking.travel.price  %></h2>
+              <%= link_to "show", travel_path(booking.travel_id), class: "btn btn-primary" %>
+            </div>
           </div>
-        <% end %>
-      </div>
+        <!-- </div> -->
       <% end %>
-    </div>
+    <!-- </div> -->
+    <% end %>
+  </div>
 </div>
