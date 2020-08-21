@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-
 .footer {
   border-top: solid #2C40AE;
-  margin-top: 35px;
+  // margin-top: 35px;
   border-width: thin;
   color: #2C40AE;
   display: flex;
   justify-content: center;
+  height: $footerheight;
 }
 
 .footer h3 {
   margin: 5px;
   font-family: 'Comfortaa', cursive;
   font-size: 17px;
+}
+
+.fixfooter {
+  min-height: calc(100vh - #{$navbarheight} - #{$footerheight})
 }

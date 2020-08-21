@@ -1,18 +1,20 @@
 <div class="form-container">
   <div class ="form-border">
     <div class="form">
-      <%= simple_form_for(@travel) do |f| %>
+      <h2>Add a trip</h2>
+      <br>
+        <%= simple_form_for(@travel) do |f| %>
 
-      <%= f.input :title, label: 'Destination' %>
-      <%= f.input :description, label: 'Title' %>
-      <%= f.input :longdescription, label: 'Description' %>
-      <%= f.input :address, label: 'Departure from'  %>
-      <%= f.input :duration, label: 'Duration' %>
-      <%= f.input :capacity, label: 'Capacity' %>
-      <%= f.input :price, label: 'Price' %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit %>
-    <% end %>
+        <%= f.input :title, label: 'Destination', placeholder: 'Type your destination' %>
+        <%= f.input :description, label: 'Title', placeholder: 'Give a title to your trip'  %>
+        <%= f.input :longdescription, label: 'Description', placeholder: 'Enter a description of the journey'  %>
+        <%= f.input :address, label: 'Departure from', placeholder: 'Type your departure city'   %>
+        <%= f.input :duration, label: 'Duration', placeholder: 'How many days will the trip last?'  %>
+        <%= f.input :capacity, label: 'Capacity', placeholder: 'How many sits are availables?'  %>
+        <%= f.input :price, label: 'Price', placeholder: 'Enter the price (€)'  %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 </div>

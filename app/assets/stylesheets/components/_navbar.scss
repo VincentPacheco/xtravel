@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
-
 div {
   display: block;
 }
@@ -32,12 +30,11 @@ a, button {
   border-width: thin;
   z-index: 5;
   margin-bottom: 1px;
+  height: $navbarheight;
 }
 
 .header .header-bottom {
   width: 100%;
-  height: 5rem;
-  height: 120px;
   background-color: white;
 }
 
