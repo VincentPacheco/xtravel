@@ -77,7 +77,7 @@ travels = Array.new(10) do
   photo = photos.sample
 
   planet = Faker::Space.galaxy
-  price = Faker::Commerce.price
+  price = Faker::Number.within(range: 25000..200000)
   latitude = Faker::Address.latitude
   longitude = Faker::Address.longitude
 
@@ -91,8 +91,8 @@ puts'Generating travels'
     travel.price = price
     travel.description = Faker::Games::WorldOfWarcraft.quote
     travel.longdescription = Faker::Quote.yoda
-    travel.duration = Faker::Number.within(range: 1..14)
-    travel.capacity = Faker::Number.within(range: 1..100)
+    travel.duration = Faker::Number.within(range: 45..170)
+    travel.capacity = Faker::Number.within(range: 40..20)
     travel.latitude = latitude
     travel.longitude = longitude
     # Please uncomment
