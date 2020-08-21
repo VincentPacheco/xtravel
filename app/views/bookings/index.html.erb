@@ -18,8 +18,8 @@
             <h2><strong><%= booking.travel.capacity %></strong> travelers - <strong><%= booking.travel.duration %></strong> days</h2>
             <hr />
             <p><%= booking.travel.longdescription %></p>
-            <%= link_to "show", travel_path(booking.travel)  %>
-            <%= link_to "delete", booking_path(booking), method: :delete %>
+            <%= link_to "See the trip", travel_path(booking.travel)  %>
+            <%= link_to "Delete my booking", booking_path(booking), method: :delete %>
           </div>
           <% end %>
       </div>
