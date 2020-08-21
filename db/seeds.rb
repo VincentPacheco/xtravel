@@ -84,7 +84,7 @@ travels = Array.new(10) do
 puts'Generating travels'
 
   # Creates a new travel
-  Travel.create do |travel|
+  Travel.create! do |travel|
     travel.user = organizer
     travel.title = planet
     travel.address = planet
@@ -92,7 +92,7 @@ puts'Generating travels'
     travel.description = Faker::Games::WorldOfWarcraft.quote
     travel.longdescription = Faker::Quote.yoda
     travel.duration = Faker::Number.within(range: 45..170)
-    travel.capacity = Faker::Number.within(range: 40..20)
+    travel.capacity = Faker::Number.within(range: 40..250)
     travel.latitude = latitude
     travel.longitude = longitude
     # Please uncomment
