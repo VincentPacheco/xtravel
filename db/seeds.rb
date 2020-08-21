@@ -2,13 +2,15 @@ require 'faker'
 require 'open-uri'
 
 # Destroy
+
+puts'Cleaning database'
 Booking.destroy_all
 Travel.destroy_all
 User.destroy_all
 
 # Photos
 photo_urls = [
-  'https://res.cloudinary.com/vincentpacheco/image/upload/v1597930309/zqn8ixtxu2497mdgvre38pdjrnhd.jpg',
+
   'https://res.cloudinary.com/vincentpacheco/image/upload/v1598001683/01-newplanet-manser1hr_ukbppe.jpg',
   'https://res.cloudinary.com/vincentpacheco/image/upload/v1598001683/1aa5e55057_50157976_plane-te-b-hd_xrjyxq.jpg',
   'https://res.cloudinary.com/vincentpacheco/image/upload/v1598001683/25450-191010135850013-0_rgja1y.jpg',
@@ -24,9 +26,15 @@ photo_urls = [
   'https://res.cloudinary.com/vincentpacheco/image/upload/v1598002999/Supermassive_blackhole_planet_fefztx.jpg'
 ]
 
+puts'Generating photos'
+
 photos = photo_urls.map do |url|
-  URI.open(url)
+  # puts url
+  open(url)
 end
+puts photos
+
+puts'Generating admin'
 
 # Admin
 admin = User.create do |user|
@@ -34,6 +42,8 @@ admin = User.create do |user|
   user.email = 'admin@xtravel.com'
   user.password = 'xtravel-admin'
 end
+
+puts'Generating organizers'
 
 # Organizers
 organizers = Array.new(3) do
@@ -46,6 +56,8 @@ organizers = Array.new(3) do
   end
 end.select(&:valid?)
 
+puts'Generating travelers'
+
 # Travelers
 travelers = Array.new(3) do
   email = Faker::Internet.email
@@ -57,21 +69,24 @@ travelers = Array.new(3) do
   end
 end.select(&:valid?)
 
+puts'Generating array of travels'
+
 # Travels
 travels = Array.new(10) do
   organizer = organizers.sample
   photo = photos.sample
 
-  planet = Faker::Space.planet
+  planet = Faker::Space.galaxy
   price = Faker::Commerce.price
   latitude = Faker::Address.latitude
   longitude = Faker::Address.longitude
 
+puts'Generating travels'
+
   # Creates a new travel
   Travel.create do |travel|
     travel.user = organizer
-    travel.title = "Space trip to #{planet}"
-    travel.description = "Enjoy a trip to #{planet}"
+    travel.title = planet
     travel.address = planet
     travel.price = price
     travel.duration = Faker::Number.within(range: 1..14)
@@ -79,13 +94,21 @@ travels = Array.new(10) do
     travel.latitude = latitude
     travel.longitude = longitude
     # Please uncomment
+    puts 'attach photo to travel'
+    # puts photo
+    puts '----'
+    url = photo_urls.sample
+    puts url
+    pic = open(url)
     travel.photo.attach(
-      io: photo,
+      io: pic,
       filename: 'photo.png',
       content_type: 'image/png'
     )
   end
 end.select(&:valid?)
+
+puts'Generating array of bookings'
 
 # Bookings
 bookings_grouped_by_travel = Array.new(3) do
